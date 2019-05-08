@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!-- saved from url=(0092)https://codelabs-preview.appspot.com/?file_id=18zMhAetQnRlf6VN4TrrEGyk_N9-yp9X3AmLQlluKgMA#0 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  
+  <title></title>
+  <link rel="stylesheet" href="./index_files/css">
+  <link rel="stylesheet" href="./index_files/icon">
+  <link rel="stylesheet" href="./index_files/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab environment="web" feedback-link="" selected="0" codelab-title=""><div id="drawer"><div class="steps"><ol><li completed="" selected=""><a href="https://codelabs-preview.appspot.com/?file_id=18zMhAetQnRlf6VN4TrrEGyk_N9-yp9X3AmLQlluKgMA#0"><span class="step"><span>Assignment topic</span></span></a></li><li><a href="https://codelabs-preview.appspot.com/?file_id=18zMhAetQnRlf6VN4TrrEGyk_N9-yp9X3AmLQlluKgMA#1"><span class="step"><span>Authors</span></span></a></li><li><a href="https://codelabs-preview.appspot.com/?file_id=18zMhAetQnRlf6VN4TrrEGyk_N9-yp9X3AmLQlluKgMA#2"><span class="step"><span>Objective</span></span></a></li><li><a href="https://codelabs-preview.appspot.com/?file_id=18zMhAetQnRlf6VN4TrrEGyk_N9-yp9X3AmLQlluKgMA#3"><span class="step"><span>Identifying Keywords</span></span></a></li><li><a href="https://codelabs-preview.appspot.com/?file_id=18zMhAetQnRlf6VN4TrrEGyk_N9-yp9X3AmLQlluKgMA#4"><span class="step"><span>Scraping Websites</span></span></a></li><li><a href="https://codelabs-preview.appspot.com/?file_id=18zMhAetQnRlf6VN4TrrEGyk_N9-yp9X3AmLQlluKgMA#5"><span class="step"><span>Analysis</span></span></a></li></ol></div></div><div id="main"><div id="codelab-title"><div id="codelab-nav-buttons"><a href="https://codelabs-preview.appspot.com/" id="arrow-back"><i class="material-icons">arrow_back</i></a><a href="https://codelabs-preview.appspot.com/?file_id=18zMhAetQnRlf6VN4TrrEGyk_N9-yp9X3AmLQlluKgMA#" id="menu"><i class="material-icons">menu</i></a></div><div id="time-remaining" title="Time remaining"><i class="material-icons">access_time</i>0 mins remaining</div></div><div id="steps"><google-codelab-step label="Assignment topic" duration="0" step="1" style="transform: translate3d(0px, 0px, 0px);" selected=""><div class="instructions"><div class="inner"><h2 class="step-title">1. Assignment topic</h2>
+        <p>        Hiring Trends in the largest banks in the US</p>
+
+
+      </div></div></google-codelab-step><google-codelab-step label="Authors" duration="0" step="2"><div class="instructions"><div class="inner"><h2 class="step-title">2. Authors</h2>
+        <ul>
+<li>Hardik Soni</li>
+<li>Krina Thakkar</li>
+<li>Ritesh Manek</li>
+<li>Yashashri Shiral</li>
+<li>Yash Lekhwani</li>
+</ul>
+
+
+      </div></div></google-codelab-step><google-codelab-step label="Objective" duration="0" step="3"><div class="instructions"><div class="inner"><h2 class="step-title">3. Objective</h2>
+        <p>        The objective is to gain actionable insights after scrapping and mining data from different websites and documents.</p>
+
+
+      </div></div></google-codelab-step><google-codelab-step label="Identifying Keywords" duration="0" step="4"><div class="instructions"><div class="inner"><h2 class="step-title">4. Identifying Keywords</h2>
+        <ul>
+<li><h3><strong>Data Cleaning :</strong></h3>
+</li>
+</ul>
+<p>        Before we start calculating keyword scores, the data which has been accumulated needs to be cleaned.</p>
+<h4>Steps to Clean data :</h4>
+<ul>
+<li>Remove Stop words from the list</li>
+<li>Perform tokenization and lemmatization</li>
+<li>Remove Plurals</li>
+<li>Manually review data</li>
+<li><h3><strong>Word Count : </strong></h3>
+</li>
+</ul>
+<p>        As the name suggest, we count the frequency of each word in all the document and extract 100 top words.</p>
+<ul>
+<li><h3><strong>Text Rank :</strong></h3>
+</li>
+</ul>
+<p>Text rank is based on PageRank algorithm. Instead of web pages we use sentences or documents.</p>
+<p>Steps to calculate text rank : </p>
+<ol type="1" start="1">
+<li>Seperate text into sentence</li>
+<li>Build matrix of words and count it's appearance in sentence</li>
+<li>Construct similarity matrix</li>
+<li>Use pagerank algorithm to score sentences.</li>
+</ol>
+<ul>
+<li><h3><strong>TF-IDF :</strong></h3>
+</li>
+</ul>
+<p>        Term Frequency (tf): Gives us the frequency of the word in each document in the corpus. It is the ratio of number of times the word appears in a document compared to the total number of words in that document. </p>
+<p> It increases as the number of occurrences of that word within the document increases. Each document has its own tf.</p>
+<p>TF(t) = (Number of times term t appears in a document) / (Total number of terms in the       document).</p>
+<p>Inverse Data Frequency (idf): Used to calculate the weight of rare words across all documents in the corpus.  The words that occur rarely in the corpus have a high IDF score. It is given by the equation below.</p>
+<p>IDF(t) = log_e(Total number of documents / Number of documents with term t in it).</p>
+<p>Combining these two we come up with the TF-IDF score (w) for a word in a document in the corpus. </p>
+<p>It is the product of tf and idf.</p>
+
+
+      </div></div></google-codelab-step><google-codelab-step label="Scraping Websites" duration="0" step="5"><div class="instructions"><div class="inner"><h2 class="step-title">5. Scraping Websites</h2>
+        <p>        Web scraping a web page involves fetching it and extracting from it. Fetching is the downloading of a page. Therefore,web crawling is a main component of web scraping, to fetch pages for later processing. Once fetched, then extraction can take place.</p>
+<p>        For implementing web scraping in Python, we have used external libraries like Selenium and BeautifulSoup.</p>
+<p>        We have looked for data having tags like Job Id, description, location, technology etc. Done mapping of keywords obtained from Part 1 with description to find occurence.</p>
+
+
+      </div></div></google-codelab-step><google-codelab-step label="Analysis" duration="0" step="6" style="transform: translate3d(110%, 0px, 0px);"><div class="instructions"><div class="inner"><h2 class="step-title">6. Analysis</h2>
+        <p>Banking has reached an inflection point with the merging of financial services and technology, or FinTech," said Carey Kolaja, Global Chief Product Officer for Citi FinTech. "But innovation can't be fueled by technology alone. Our customers are crucial to the ideation and creation process, so we've included them since day one and are always looking for new and better ways to incorporate their insights as we design our digital products. This co-creation process is now at the heart of everything we do."</p>
+<p>The core activities of Citigroup are safeguarding assets, lending money, making payments and accessing the capital markets on behalf of our clients. However, the company is now focusing on the following key areas as identified by our data analysis. </p>
+<ol type="1" start="1">
+<li><h3><strong>Future for Funding</strong></h3>
+</li>
+</ol>
+<p><strong>Sales: </strong>The world of sales has been rapidly changing in the last few years as new technology evolved and became more accessible to businesses and sales teams across niches. The question is, what will 2019 bring to the table? What will be the biggest trends in sales happening in 2019?</p>
+<p>Analyzing from the trends of hiring in the Sales sector at Citigroup, a part time teller or a bank teller, plays a pivotal role, indicative of Citigroup's move to strengthen customer service and thus, increase openings in the sales sector for the bank.</p>
+<p>From our reports, we could explain that the key areas of focus for Citigroup while hiring are Sales, Risk Management, Finance, Audit ,Technology, Private Client Coverage in that order. </p>
+<p><img style="max-width: 624.00px" src="./index_files/part 3-2.png"></p>
+<p>While Sales is on the top of the list with 17.01% opening, Risk Management follows with 10.92% and the others with a 9.32, 4.56, 4.03 and 3.75 respectively.</p>
+<p>An interesting point to note is that the Citigroups' focus on Sales is significantly more in California and New York.  Some plausible reasons for this could be, the increase in real estate values in these areas, boom of fintech startups and many educational universities in the vicinity. Through closer examination, we could make sense out of the high number of openings for personal bankers and home lending officers. </p>
+<ol type="1" start="2">
+<li><h3><strong>Resilience through Risk</strong></h3>
+</li>
+</ol>
+<p>Since the infamous credit crisis of 2008, banks have had to suffer with  fines and losses to regulatory incompliance and risk analysis has become all about strategic planning and Citigroup seems to have made this one of its prime goals this year, owing to the burgeoning positions it has to offer in Quantitive Risk and Stress Governance, especially in Florida. For potential risk analysts, this a good opportunity to look for Citigroup's Tampa, Florida as Citigroup chooses to expand and offer various roles within the risk management vertical.  The following chart explains the importance of the risk management sector in Florida and New York and explains their consistency throughout other job functions at Citi. </p>
+<p><img style="max-width: 624.00px" src="./index_files/location trend.PNG"></p>
+<ol type="1" start="3">
+<li><h3><strong>Delivery of value through digital platforms</strong></h3>
+</li>
+</ol>
+<p>With the advent of payment of checks online, banks are accelerating towards a digital revolution. Banking through digital platforms is becoming an integral step for Citigroup, owing to its hiring in the sector for Technology. Our analysis tells us that about 50% of the roles offered by Citi are leadership roles. Chief of Staff and the Head of Cloud Platforms and Strategy are one of the few instances of such interesting openings.</p>
+<p><img style="max-width: 624.00px" src="./index_files/Technology trend.PNG"></p>
+<p>In contrast, we analyzed the hiring trend of another stalwart in the banking and fintech industry, Wells Fargo. Their consistent vision of helping customers succeed financially, values, which articulate what's right for customers, people as a competitive advantage, ethics, diversity and inclusion, and leadership.</p>
+<p>The following are the key areas of focus for Wells Fargo,</p>
+<p>Community Banking with an average of 18.14, Consultant with an average of 12.21, Customer Lending Group with an average of 12.89%, Technology with an average percentage of 7.71 and Enterprise Function with an average of 5.02%</p>
+<p>Some other key findings were, as we focused on the job openings in the Tech sector of Wells Fargo, we learned that the most desired skills for such openings were, Data, Java, .NET and Information Security.</p>
+<p>The community banker has major opening in Personal banker and Teller</p>
+<p><img style="max-width: 624.00px" src="./index_files/WF.PNG"></p>
+<p>Eventually we also concluded a reading of the Customer Lending group sector, Mortgage Consultant (SAFE) of 58 records, Mortgage Consultant Jr. 5 and so on and so forth as follows.</p>
+<p><img style="max-width: 624.00px" src="./index_files/consultant.PNG"></p>
+
+
+      </div></div></google-codelab-step></div><div id="controls"><div id="fabs"><a href="https://codelabs-preview.appspot.com/?file_id=18zMhAetQnRlf6VN4TrrEGyk_N9-yp9X3AmLQlluKgMA#" id="previous-step" title="Previous step" disappear="">Back</a><div class="spacer"></div><a href="https://codelabs-preview.appspot.com/?file_id=18zMhAetQnRlf6VN4TrrEGyk_N9-yp9X3AmLQlluKgMA#" id="next-step" title="Next step">Next</a><a href="https://codelabs-preview.appspot.com/" id="done" title="Codelab complete" hidden="">Done</a></div></div></div></google-codelab>
+
+  <script async="">
+    document.addEventListener("DOMContentLoaded", function() {
+      var pubBtn = document.getElementById('publishButton');
+      var pubForm = document.getElementById('publishForm');
+      var pubStatus = document.getElementById('publishButtonStatus');
+
+      pubForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        pubBtn.disabled = true;
+        pubStatus.textContent = '';
+        pubStatus.classList.remove('success');
+        pubStatus.classList.remove('error');
+
+        var req = new XMLHttpRequest();
+
+        var onError = function() {
+          var msg = 'Request failed';
+          if (req.statusText) {
+            msg += ' with status "' + req.statusText + '"';
+          }
+          if (req.responseText) {
+            msg += ': ' + req.responseText;
+          }
+          pubStatus.classList.add('error');
+          pubStatus.textContent = msg;
+          pubBtn.disabled = false;
+        };
+
+        req.addEventListener('load', function() {
+          if (req.status != 200) {
+            onError();
+            return;
+          }
+          pubStatus.textContent = ('Publication request submitted' +
+            ' (reload preview to re-publish)');
+          pubStatus.classList.add('success');
+        });
+        req.addEventListener('error', onError);
+        req.addEventListener('abort', onError);
+        req.open("post", pubForm.action);
+        req.send(new FormData(pubForm));
+      });
+    });
+  </script>
+
+  <script src="./index_files/native-shim.js.download"></script>
+  <script src="./index_files/custom-elements.min.js.download"></script>
+  <script src="./index_files/prettify.js.download"></script>
+  <script src="./index_files/codelab-elements.js.download"></script>
+
+
+</body></html>
